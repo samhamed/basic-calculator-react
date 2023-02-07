@@ -1,0 +1,97 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+  background: linear-gradient(to right,#00AAFF,#00FF6c);
+}
+.wrapper {
+	max-width: 420px;
+	min-height: 96vh;
+	margin: 0 auto;
+  color: aqua;
+  
+}
+
+button {
+	font-size: 2rem;
+	border: 1px solid #6d19b5;
+	cursor: pointer;
+}
+.modifiers button {
+	background-color: #ccc;
+}
+.modifiers button:hover {
+	background-color: #fd0000;
+}
+.operations button {
+	background-color: orange;
+	width: 100px;
+}
+.operations button:hover {
+	background-color: rgb(0, 255, 17);
+	width: 100px;
+}
+.digits button {
+	background-color: #efefef;
+}
+.digits button:hover {
+	background-color: #00e1ff;
+}
+.wrapper,
+.subgrid {
+	display: grid;
+}
+.wrapper {
+	grid-template-areas:
+		'total total total total'
+		'modif modif modif oper'
+		'digit digit digit oper'
+		'digit digit digit oper'
+		'digit digit digit oper'
+		'digit digit digit oper';
+	grid-auto-columns: 1fr;
+}
+.show-input {
+	grid-area: total;
+  /* grid-column: 1 / -1; */
+  background-color:rgba(0,0,0, .75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 199px;
+  box-shadow: #8c38ff;
+}
+.modifiers {
+	grid-area: modif;
+}
+.operations {
+	grid-area: oper;
+}
+.digits {
+	grid-area: digit;
+}
+
+.show-input {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 2rem;
+}
+
+.modifiers {
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+}
+
+.digits {
+	display: flex;
+	flex-wrap: wrap;
+}
+.digits button {
+	flex: 1 0 26%;
+}
